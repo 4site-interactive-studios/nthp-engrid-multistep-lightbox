@@ -1,4 +1,4 @@
-# Oceana ENgrid Multistep Lightbox
+# National Trust for Historic Preservation ENgrid Multistep Lightbox
 
 This project makes it easy to create links to your Engaging Networks Donation Page as a lightbox with multiple steps.
 
@@ -9,7 +9,7 @@ This project makes it easy to create links to your Engaging Networks Donation Pa
 ```html
 <script
   defer="defer"
-  src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2246/donation-lightbox-parent.js"
+  src="https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10028/donation-lightbox-parent.js"
 ></script>
 ```
 
@@ -23,7 +23,7 @@ Every option can be set as a data attribute on the `a` tag, or as a JavaScript o
 
 **Options:**
 
-- **name** - Name of the lightbox instance (for analytics/events). Default: "Oceana Multi-Step Lightbox"
+- **name** - Name of the lightbox instance (for analytics/events). Default: "National Trust for Historic Preservation Multi-Step Lightbox"
 - **image** - Main image of the lightbox (used as a poster if video is set).
 - **video** - Main video of the lightbox. If set, the image is used as a poster.
 - **autoplay** - If true, the video will autoplay, be muted, and loop.
@@ -57,14 +57,14 @@ On the example above, the logo and footer will be used for all links.
 **Example of Link Without Lightbox:**
 
 ```html
-<a href="https://act.oceana.org/page/174812/donate/1">Give Now</a>
+<a href="https://support.savingplaces.org/page/88621/donate/1">Give Now</a>
 ```
 
 **Example of Link With Lightbox:**
 
 ```html
 <a
-  href="https://act.oceana.org/page/174812/donate/1"
+  href="https://support.savingplaces.org/page/88621/donate/1"
   data-donation-lightbox
   data-title="My Title Test"
   data-paragraph="My paragraph test"
@@ -76,7 +76,7 @@ On the example above, the logo and footer will be used for all links.
 
 ```javascript
 DonationLightboxOptions = {
-  name: "Oceana Multi-Step Lightbox",
+  name: "National Trust for Historic Preservation Multi-Step Lightbox",
   image: "",
   video: "",
   logo: "",
@@ -86,9 +86,9 @@ DonationLightboxOptions = {
   mobile_title: "",
   mobile_paragraph: "",
   footer: "",
-  bg_color: "#00675a",
-  txt_color: "#FFFFFF",
-  form_color: "#E5621A",
+  bg_color: "#FFFFFF",
+  txt_color: "#0F0F0F",
+  form_color: "#00a3e2",
   url: null,
   closeURL: null,
   cookie_hours: 24,
@@ -120,4 +120,4 @@ Your js code must be on the `src/app` folder. Styling changes must be on `src/sc
 It's going to create a `dist` folder, where you can get the `donation-lightbox-parent.js` file and publish it.
 
 Currently it's published on:  
-https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2246/donation-lightbox-parent.js
+https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10028/donation-lightbox-parent.js

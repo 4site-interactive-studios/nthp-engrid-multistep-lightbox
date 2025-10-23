@@ -57,14 +57,16 @@ On the example above, the logo and footer will be used for all links.
 **Example of Link Without Lightbox:**
 
 ```html
-<a href="https://support.savingplaces.org/page/88621/donate/1">Give Now</a>
+<a href="https://support.savingplaces.org/page/89280/donate/1?mode=DEMO"
+  >Give Now</a
+>
 ```
 
 **Example of Link With Lightbox:**
 
 ```html
 <a
-  href="https://support.savingplaces.org/page/88621/donate/1"
+  href="https://support.savingplaces.org/page/89280/donate/1?mode=DEMO"
   data-donation-lightbox
   data-title="My Title Test"
   data-paragraph="My paragraph test"

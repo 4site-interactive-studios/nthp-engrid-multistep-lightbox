@@ -21,6 +21,11 @@ export class DonationLightbox {
       closeURL: null,
       cookie_hours: 24,
       id: "",
+      confetti: null,
+      logo_position_left: "unset",
+      logo_position_top: "unset",
+      logo_position_bottom: "unset",
+      logo_position_right: "unset",
     };
     this.donationinfo = {};
     this.options = { ...this.defaultOptions };
@@ -28,6 +33,17 @@ export class DonationLightbox {
     this.init();
   }
   setOptions(options) {
+    // Handle confetti option parsing
+    if (options.confetti && typeof options.confetti === "string") {
+      try {
+        options.confetti = JSON.parse(options.confetti);
+      } catch (e) {
+        console.error(
+          "DonationLightbox: Invalid confetti colors format in setOptions",
+          e
+        );
+      }
+    }
     this.options = Object.assign(this.options, options);
   }
   loadOptions(element = null) {
@@ -95,6 +111,32 @@ export class DonationLightbox {
     }
     if ("id" in data) {
       this.options.id = data.id;
+    }
+    if ("confetti" in data) {
+      try {
+        // Handle both JSON arrays and stringified JSON arrays
+        let confettiData = data.confetti;
+        // Check if it's a string and try to parse it
+        if (typeof confettiData === "string") {
+          this.options.confetti = JSON.parse(confettiData);
+        } else {
+          this.options.confetti = confettiData;
+        }
+      } catch (e) {
+        console.error("DonationLightbox: Invalid confetti colors format", e);
+      }
+    }
+    if ("logo_position_top" in data) {
+      this.options.logo_position_top = data.logo_position_top;
+    }
+    if ("logo_position_right" in data) {
+      this.options.logo_position_right = data.logo_position_right;
+    }
+    if ("logo_position_bottom" in data) {
+      this.options.logo_position_bottom = data.logo_position_bottom;
+    }
+    if ("logo_position_left" in data) {
+      this.options.logo_position_left = data.logo_position_left;
     }
   }
   init() {
@@ -166,7 +208,7 @@ export class DonationLightbox {
           }; color: ${this.options.txt_color}">
             ${
               this.options.logo
-                ? `<img class="dl-logo" src="${this.options.logo}" alt="${this.options.title}">`
+                ? `<img class="dl-logo" src="${this.options.logo}" alt="${this.options.title}" style="top: ${this.options.logo_position_top}; right: ${this.options.logo_position_right}; bottom: ${this.options.logo_position_bottom}; left: ${this.options.logo_position_left};">`
                 : ""
             }
             <a href="#" class="dl-close-viewmore" style="color: ${
@@ -507,6 +549,11 @@ export class DonationLightbox {
       zIndex: 100000,
       useWorker: false,
     };
+
+    // Add custom colors if provided
+    if (this.options.confetti && Array.isArray(this.options.confetti)) {
+      defaults.colors = this.options.confetti;
+    }
 
     const randomInRange = (min, max) => {
       return Math.random() * (max - min) + min;

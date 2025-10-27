@@ -563,8 +563,19 @@ body.has-DonationLightbox {
         left: 15px;
         padding: 10px;
         box-sizing: content-box;
+        background-color: #ffffff;
         @media (min-width: breakpoint.$breakpoint-desktop) {
           display: block;
+        }
+      }
+      &:has(.celebrating) {
+        .dl-logo {
+          background-color: transparent;
+          transform: translateX(-50%);
+          left: 50% !important;
+          top: 50px !important;
+          right: unset !important;
+          bottom: unset !important;
         }
       }
     }

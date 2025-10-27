@@ -24,8 +24,8 @@ export class DonationLightbox {
       confetti: null,
       logo_position_left: "unset",
       logo_position_top: "unset",
-      logo_position_bottom: "unset",
-      logo_position_right: "unset",
+      logo_position_bottom: "170px",
+      logo_position_right: "0",
     };
     this.donationinfo = {};
     this.options = { ...this.defaultOptions };

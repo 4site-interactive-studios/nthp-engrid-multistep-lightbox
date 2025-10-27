@@ -244,7 +244,7 @@ export class DonationLightbox {
               </div>
               <div class="dl-celebration">
                 <div class="frame frame1">
-                    <h3>and the animals</h3>
+                    <h3>and historic places</h3>
                     <h2>THANK YOU!</h2>
                 </div>
                 <div class="frame frame2">
@@ -252,7 +252,7 @@ export class DonationLightbox {
                 </div>
                 <div class="frame frame3">
                   <h2 class="name">Fernando,</h2>
-                  <h2 class="phrase">you are a hero <br>to animals.</h2>
+                  <h2 class="phrase">you are a hero<br>to historic<br>places that<br>tell the full<br>American story.</h2>
                 </div>
               </div>
             </div>

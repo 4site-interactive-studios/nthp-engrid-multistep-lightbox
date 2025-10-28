@@ -23,7 +23,7 @@ Every option can be set as a data attribute on the `a` tag, or as a JavaScript o
 
 **Options:**
 
-- **name** - Name of the lightbox instance (for analytics/events). Default: "National Trust for Historic Preservation Multi-Step Lightbox"
+- **name** - Name of the lightbox instance (for analytics/events). Default: "National Trust for Historic Preservation Multistep Lightbox"
 - **image** - Main image of the lightbox (used as a poster if video is set).
 - **video** - Main video of the lightbox. If set, the image is used as a poster.
 - **autoplay** - If true, the video will autoplay, be muted, and loop.
@@ -35,9 +35,9 @@ Every option can be set as a data attribute on the `a` tag, or as a JavaScript o
 - **mobile_title** - Title to display on mobile view.
 - **mobile_paragraph** - Paragraph/content to display on mobile view.
 - **footer** - Content of the footer area.
-- **bg_color** - HEX color for the left column background. Default: #00675a
+- **bg_color** - HEX color for the left column background. Default: #141359
 - **txt_color** - HEX color for the left column text. Default: #FFFFFF
-- **form_color** - HEX color for the form theme. Default: #E5621A
+- **form_color** - HEX color for the form theme. Default: #141359
 - **url** - URL of the donation page. If set, the lightbox can auto-open on page load.
 - **closeURL** - URL to redirect to when the lightbox is closed (optional).
 - **cookie_hours** - Number of hours to not auto-open the lightbox after the user closes it. Default: 24
@@ -78,7 +78,7 @@ On the example above, the logo and footer will be used for all links.
 
 ```javascript
 DonationLightboxOptions = {
-  name: "National Trust for Historic Preservation Multi-Step Lightbox",
+  name: "National Trust for Historic Preservation Multistep Lightbox",
   image: "",
   video: "",
   logo: "",
@@ -88,9 +88,9 @@ DonationLightboxOptions = {
   mobile_title: "",
   mobile_paragraph: "",
   footer: "",
-  bg_color: "#FFFFFF",
-  txt_color: "#0F0F0F",
-  form_color: "#00a3e2",
+  bg_color: "#141359",
+  txt_color: "#FFFFFF",
+  form_color: "#141359",
   url: null,
   closeURL: null,
   cookie_hours: 24,

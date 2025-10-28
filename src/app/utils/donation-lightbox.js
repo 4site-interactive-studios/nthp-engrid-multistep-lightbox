@@ -242,19 +242,6 @@ export class DonationLightbox {
                 </svg>
                 <span>Read More</span></a>
               </div>
-              <div class="dl-celebration">
-                <div class="frame frame1">
-                    <h3>and historic places</h3>
-                    <h2>THANK YOU!</h2>
-                </div>
-                <div class="frame frame2">
-                  <div id="bunnyAnimation"></div>
-                </div>
-                <div class="frame frame3">
-                  <h2 class="name">Fernando,</h2>
-                  <h2 class="phrase">you are a hero<br>to historic<br>places that<br>tell the full<br>American story.</h2>
-                </div>
-              </div>
             </div>
           </div>
           <div class="right">
@@ -435,16 +422,6 @@ export class DonationLightbox {
           this.donationinfo
         );
         break;
-      case "firstname":
-        const firstname = message.value;
-        const nameHeading = document.querySelector(".dl-celebration h2.name");
-        if (nameHeading) {
-          nameHeading.innerHTML = firstname + ",";
-          if (firstname.length > 12) {
-            nameHeading.classList.add("big-name");
-          }
-        }
-        break;
       case "isMobile":
         event.source.postMessage(
           {
@@ -594,9 +571,6 @@ export class DonationLightbox {
       this.startConfetti();
       return;
     }
-
-    // Left Animation
-    leftContainer.classList.add("celebrating");
   }
   shake() {
     const element = document.querySelector(".dl-content");

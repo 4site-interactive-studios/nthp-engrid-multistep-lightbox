@@ -4,7 +4,7 @@ export class DonationLightbox {
     console.log("DonationLightbox: constructor");
     window.dataLayer = window.dataLayer || [];
     this.defaultOptions = {
-      name: "TNC Multi-Step Lightbox",
+      name: "National Trust for Historic Preservation Multistep Lightbox",
       image: "",
       video: "",
       logo: "",
@@ -14,9 +14,9 @@ export class DonationLightbox {
       mobile_title: "",
       mobile_paragraph: "",
       footer: "",
-      bg_color: "#22214a",
+      bg_color: "#141359",
       txt_color: "#FFFFFF",
-      form_color: "#058ceb",
+      form_color: "#141359",
       url: null,
       closeURL: null,
       cookie_hours: 24,

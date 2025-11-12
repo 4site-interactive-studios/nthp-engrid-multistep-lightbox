@@ -22,10 +22,11 @@ export class DonationLightbox {
       cookie_hours: 24,
       id: "",
       confetti: null,
-      logo_position_left: "unset",
-      logo_position_top: "unset",
-      logo_position_bottom: "170px",
-      logo_position_right: "0",
+      logo_position_left: "0",
+      logo_position_top: "0",
+      logo_position_bottom: "unset",
+      logo_position_right: "unset",
+      view_more: false,
     };
     this.donationinfo = {};
     this.options = { ...this.defaultOptions };

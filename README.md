@@ -40,6 +40,7 @@ Every option can be set as a data attribute on the `a` tag, or as a JavaScript o
 - **form_color** - HEX color for the form theme. Default: #00679D
 - **url** - URL of the donation page. If set, the lightbox can auto-open on page load.
 - **closeURL** - URL to redirect to when the lightbox is closed (optional).
+- **view_more** - A link that, when clicked, expands the lightbox to reveal additional content from the paragraph that wasn't initially visible.
 - **cookie_hours** - Number of hours to not auto-open the lightbox after the user closes it. Default: 24
 - **id** - Custom ID for the lightbox instance (for analytics/events).
 
@@ -95,6 +96,7 @@ DonationLightboxOptions = {
   closeURL: null,
   cookie_hours: 24,
   id: "",
+  view_more: false,
 };
 ```
 

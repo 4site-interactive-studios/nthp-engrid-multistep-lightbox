@@ -35,9 +35,9 @@ Every option can be set as a data attribute on the `a` tag, or as a JavaScript o
 - **mobile_title** - Title to display on mobile view.
 - **mobile_paragraph** - Paragraph/content to display on mobile view.
 - **footer** - Content of the footer area.
-- **bg_color** - HEX color for the left column background. Default: #141359
+- **bg_color** - HEX color for the left column background. Default: #00679D
 - **txt_color** - HEX color for the left column text. Default: #FFFFFF
-- **form_color** - HEX color for the form theme. Default: #141359
+- **form_color** - HEX color for the form theme. Default: #00679D
 - **url** - URL of the donation page. If set, the lightbox can auto-open on page load.
 - **closeURL** - URL to redirect to when the lightbox is closed (optional).
 - **cookie_hours** - Number of hours to not auto-open the lightbox after the user closes it. Default: 24
@@ -88,9 +88,9 @@ DonationLightboxOptions = {
   mobile_title: "",
   mobile_paragraph: "",
   footer: "",
-  bg_color: "#141359",
+  bg_color: "#00679D",
   txt_color: "#FFFFFF",
-  form_color: "#141359",
+  form_color: "#00679D",
   url: null,
   closeURL: null,
   cookie_hours: 24,

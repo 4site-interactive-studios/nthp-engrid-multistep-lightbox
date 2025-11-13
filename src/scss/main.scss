@@ -291,13 +291,6 @@ body.has-DonationLightbox {
             letter-spacing: normal;
             text-align: left;
             margin-bottom: 0;
-            line-clamp: 3;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-height: 65px;
-            max-width: 80%;
           }
           .dl-viewmore {
             font-family: $content-font;

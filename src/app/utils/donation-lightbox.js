@@ -212,14 +212,20 @@ export class DonationLightbox {
                 ? `<img class="dl-logo" src="${this.options.logo}" alt="${this.options.title}" style="top: ${this.options.logo_position_top}; right: ${this.options.logo_position_right}; bottom: ${this.options.logo_position_bottom}; left: ${this.options.logo_position_left};">`
                 : ""
             }
-            <a href="#" class="dl-close-viewmore" style="color: ${
-              this.options.bg_color
-            };">
+            ${
+              this.options.view_more
+                ? `
+            <a href="#" class="dl-close-viewmore" style="color: ${this.options.bg_color};">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
                 <path fill="currentColor" d="M7.214.786c.434-.434 1.138-.434 1.572 0 .433.434.433 1.137 0 1.571L4.57 6.572h10.172c.694 0 1.257.563 1.257 1.257s-.563 1.257-1.257 1.257H4.229l4.557 4.557c.433.434.433 1.137 0 1.571-.434.434-1.138.434-1.572 0L0 8 7.214.786z"></path>
               </svg>
             </a>
-            <div class="dl-container">
+            `
+                : ""
+            }
+            <div class="dl-container" data-view-more="${
+              this.options.view_more ? "true" : "false"
+            }">
               ${this.loadHero()}
               ${
                 this.options.divider
@@ -235,13 +241,18 @@ export class DonationLightbox {
                 <p class="dl-paragraph" style="color: ${
                   this.options.txt_color
                 }">${this.options.paragraph}</p>
-                <a class="dl-viewmore" href="#"style="color: ${
-                  this.options.txt_color
-                }; border-color: ${this.options.txt_color}"> 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                  <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
-                </svg>
-                <span>Read More</span></a>
+                ${
+                  this.options.view_more
+                    ? `
+                        <a class="dl-viewmore" href="#"style="color: ${this.options.txt_color}; border-color: ${this.options.txt_color}"> 
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                            <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
+                          </svg>
+                          <span>Read More</span>
+                        </a>
+                      `
+                    : ""
+                }
               </div>
             </div>
           </div>
@@ -269,7 +280,7 @@ export class DonationLightbox {
     );
 
     additionalStylesElement.innerHTML = `
-      p.dl-paragraph::after {
+      [data-view-more="true"] p.dl-paragraph::after {
         position: absolute;
         bottom: 0;
         right: 0;
@@ -307,16 +318,20 @@ export class DonationLightbox {
     // });
 
     const closeViewMore = overlay.querySelector(".dl-close-viewmore");
-    closeViewMore.addEventListener("click", (e) => {
-      e.preventDefault();
-      overlay.querySelector(".left").classList.remove("view-more");
-    });
+    if (closeViewMore) {
+      closeViewMore.addEventListener("click", (e) => {
+        e.preventDefault();
+        overlay.querySelector(".left").classList.remove("view-more");
+      });
+    }
 
     const viewmore = overlay.querySelector(".dl-viewmore");
-    viewmore.addEventListener("click", (e) => {
-      e.preventDefault();
-      overlay.querySelector(".left").classList.add("view-more");
-    });
+    if (viewmore) {
+      viewmore.addEventListener("click", (e) => {
+        e.preventDefault();
+        overlay.querySelector(".left").classList.add("view-more");
+      });
+    }
 
     const videoElement = overlay.querySelector("video");
     if (videoElement) {

@@ -146,7 +146,6 @@ body.has-DonationLightbox {
           position: relative;
           transition: 0.3s transform ease-in-out;
           overflow: hidden;
-          min-height: 380px;
           object-fit: cover;
           video {
             display: block;
@@ -224,23 +223,24 @@ body.has-DonationLightbox {
               transition: all 0.35s;
             }
           }
+          &[data-view-more="true"] {
+            &:hover,
+            &.expanded {
+              .dl-container-inner {
+                transform: translateY(-5px);
 
-          &:hover,
-          &.expanded {
-            .dl-container-inner {
-              transform: translateY(-5px);
+                .dl-paragraph::after {
+                  transform: translateY(5px);
+                }
+              }
 
-              .dl-paragraph::after {
+              .dl-divider {
+                transform: translateY(calc(-100% - 9px));
+              }
+
+              .dl-viewmore {
                 transform: translateY(5px);
               }
-            }
-
-            .dl-divider {
-              transform: translateY(calc(-100% - 9px));
-            }
-
-            .dl-viewmore {
-              transform: translateY(5px);
             }
           }
 
@@ -265,11 +265,7 @@ body.has-DonationLightbox {
         .dl-container-inner {
           margin: 0;
           padding: 20px 40px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          top: 380px;
+          position: relative;
           transition: 0.6s top ease-in-out, 0.3s transform ease-in-out;
           z-index: 20;
           .dl-title {
@@ -354,6 +350,7 @@ body.has-DonationLightbox {
             justify-content: center;
             align-items: center;
             .dl-container-inner {
+              position: absolute;
               top: 55px;
               margin: 0 20px;
               padding: 20px;
@@ -485,6 +482,14 @@ body.has-DonationLightbox {
         background-color: #ffffff;
         @media (min-width: breakpoint.$breakpoint-desktop) {
           display: block;
+        }
+      }
+      &:has(.celebrating) {
+        .dl-logo {
+          background-color: transparent;
+          top: 50px;
+          left: 50%;
+          transform: translateX(-50%);
         }
       }
     }

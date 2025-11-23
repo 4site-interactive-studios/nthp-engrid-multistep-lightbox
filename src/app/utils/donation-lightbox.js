@@ -6,6 +6,7 @@ export class DonationLightbox {
     this.defaultOptions = {
       name: "National Trust for Historic Preservation Multistep Lightbox",
       image: "",
+      image_attribution: "",
       video: "",
       logo: "",
       title: "",
@@ -653,7 +654,14 @@ export class DonationLightbox {
   }
   loadHero() {
     if (!this.options.video) {
-      return `<img class="dl-hero" src="${this.options.image}" alt="${this.options.title}" />`;
+      if (this.options.image_attribution != "") {
+        return `<figure class="dl-media-with-attribution">
+            <img class="dl-hero" src="${this.options.image}" alt="${this.options.title}" data-attribution-source="${this.options.image_attribution}" />
+            <figattribution>${this.options.image_attribution}</figattribution>
+          </figure>`;
+      } else {
+        return `<img class="dl-hero" src="${this.options.image}" alt="${this.options.title}" />`;
+      }
     }
     const autoplay = this.options.autoplay || false;
     let markup = autoplay
